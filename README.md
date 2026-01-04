@@ -62,11 +62,13 @@ Constant Composition Distribution Matching (CCDM) library for probabilistic shap
 
 ### CCDM (Constant Composition Distribution Matching)
 
-**Georg Böcherer**, "Probabilistic Signal Shaping for Bit-Metric Decoding," *IEEE Transactions on Communications*, vol. 62, no. 11, pp. 3795-3805, Nov. 2014.
+**P. Schulte and G. Böcherer**, "Constant Composition Distribution Matching," *IEEE Transactions on Information Theory*, vol. 62, no. 1, pp. 430-434, Jan. 2016.  
+DOI: [https://ieeexplore.ieee.org/document/7322261/](https://ieeexplore.ieee.org/document/7322261/)
 
 ### PAS (Probabilistic Amplitude Shaping)
 
-**Georg Böcherer**, "Probabilistic Amplitude Shaping," Huawei Technologies, Germany.
+**Georg Böcherer**, "Probabilistic Amplitude Shaping," *Foundations and Trends® in Communications and Information Theory*, vol. 20, no. 4, pp. 390-511, Jun. 2023.  
+DOI: [10.1561/0100000111](https://www.nowpublishers.com/article/Details/CIT-111)
 
 ### Acknowledgments
 
@@ -75,7 +77,7 @@ Parts of this code reference the following project:
 **Mihai Varsandan**, "Probabilistic Constellation Shaping for Optical Fiber Communication Systems"  
 GitHub Repository: [https://github.com/mihaivarsandan/Probabilistic_Constellation_Shaping](https://github.com/mihaivarsandan/Probabilistic_Constellation_Shaping)
 
-We gratefully acknowledge these contributions to the field of probabilistic amplitude shaping.
+Gratefully acknowledge these contributions to the field of probabilistic shaping.
 
 ---
 
