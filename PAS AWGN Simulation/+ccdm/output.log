@@ -1,0 +1,24 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2022 The MathWorks, Inc.
+                  R2022a (9.12.0.1884302) 64-bit (glnxa64)
+                             February 16, 2022
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Building with 'g++'.
+/home/s2410109/.windows/Desktop/HPC_Computing/LDPC_DCO-OFDM_Simulation/LDPC_DCO-OFDM_Simulation/+ccdm/decodeCCADM.cpp: In function 'int* decodeConstantCompositionArithmeticMatcher(std::__cxx11::list<int>, std::vector<int>, int)':
+/home/s2410109/.windows/Desktop/HPC_Computing/LDPC_DCO-OFDM_Simulation/LDPC_DCO-OFDM_Simulation/+ccdm/decodeCCADM.cpp:254:30: warning: control reaches end of non-void function [-Wreturn-type]
+  254 |     struct codeCandidateList ccList;
+      |                              ^~~~~~
+
+MEX completed successfully.
+
+=================================== RESOURCE INFORMATION ===================================
+ Requested Resource:
+ mem=400000kb,walltime=00:20:00,ncpus=8,place=pack 
+ Used Resource: 
+ mem=1026768kb,walltime=00:00:11,ncpus=8,cpupercent=309,vmem=16577868kb
+============================================================================================

@@ -1,0 +1,13 @@
+#PBS -N build
+#PBS -o output.log
+#PBS -e error.log
+#PBS -l select=1:ncpus=8:mem=400000kb
+#PBS -l walltime=00:20:00
+#PBS -q SINGLE
+
+
+module load matlab
+
+cd $PBS_O_WORKDIR
+
+matlab -nodisplay -nosplash -nodesktop -r "mex decodeCCADM.cpp; exit;"
