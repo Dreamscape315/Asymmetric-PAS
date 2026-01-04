@@ -58,6 +58,10 @@ Constant Composition Distribution Matching (CCDM) library for probabilistic shap
 - Example data files are provided in `Asymmetric PAS/example/` for receiver testing
 - All simulations use fixed random seeds for reproducibility
 
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ## 📚 Citation and Acknowledgments
 
 ### CCDM (Constant Composition Distribution Matching)
