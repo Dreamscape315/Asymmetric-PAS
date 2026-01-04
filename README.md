@@ -1,38 +1,41 @@
-# Optical Communication Simulation Toolkit
+# Simplified Asymmetric Probabilistic Amplitude Shaping
 
-A collection of MATLAB simulation codes for optical communication systems, focusing on probabilistic amplitude shaping (PAS), photon detection, and nonlinear effects.
+A simplified asymmetric probabilistic amplitude shaping (PAS) scheme for intensity modulation and direct detection (IM/DD) optical communication systems using Silicon Photomultiplier (SiPM) receivers. This implementation addresses the nonlinear distortion of SiPM receivers in IM/DD OWC system.
+
+## 🎯 Overview
+
+This project implements an Asymmetric PAS architecture tailored for SiPM-based optical receivers:
+- **Asymmetric signaling** optimized for the nonlinear response of photon-counting detectors
+- **CCDM-based shaping** for non-uniform amplitude distributions
+- **4-PAM modulation** with LDPC forward error correction
+- **Volterra equalization** to compensate for channel nonlinearities
+
+The supporting simulations provide theoretical justification for the receiver modeling and system design choices.
 
 ## 📁 Repository Structure
 
-### `Asymmetric PAS/`
-Implementation of Asymmetric Probabilistic Amplitude Shaping (APAS) for 4-PAM modulation over optical channels.
-- **Transmitter**: CCDM-based amplitude shaping with LDPC FEC
-- **Receiver**: Volterra equalization, PAS-aware LLR calculation, and LDPC decoding
-- **Utilities**: Bit mapping, interleaving, and LLR calculation functions
+### `Asymmetric PAS/` - **Core Implementation**
+Simplified Asymmetric PAS for SiPM-based IM/DD optical channels.
+- **Transmitter**: CCDM amplitude shaping, Gray bit mapping, LDPC encoding
+- **Receiver**: Synchronization, Volterra equalization, PAS-aware LLR calculation, LDPC decoding
+- **Utilities**: Bit mapping functions, interleaving, LLR calculators
 
-### `PAS AWGN Simulation/`
-Monte Carlo simulations for PAS-enabled communication systems over AWGN channels.
-- **PAM_LDPC_AWGN.m**: Baseline 4-PAM with LDPC coding (uniform distribution)
-- **PAS_AWGN.m**: 4-PAM with probabilistic amplitude shaping and CCDM
-- **Utilities**: LLR calculation, LDPC matrix configuration, PAS distribution generation
+### `SiPM Non-Linearity Simulation/` - **Receiver Characterization**
+Validates the SiPM receiver model used in the APAS design.
+- Dead-time saturation effects modeling
+- Count rate and bias current vs. optical power characterization
+- Full-array and scaled Monte Carlo approaches
 
-### `SiPM Non-Linearity Simulation/`
-Silicon Photomultiplier (SiPM) response modeling with dead-time saturation effects.
-- **Full-array Monte Carlo**: Explicit simulation of all SPAD cells (slow but accurate)
-- **Scaled Monte Carlo**: Single-SPAD simulation scaled to array (fast approximation)
-- **Metrics**: Count rate vs. irradiance, bias current vs. irradiance
-- **Device**: SiPM 30020 (14,410 SPADs, 3.07×3.07 mm² active area)
+### `SPAD Simulation/` - **Fundamental Photon Detection**
+Studies single-photon detection dynamics to understand SiPM behavior.
+- Non-paralyzable dead time modeling
+- Poisson arrival process simulation
 
-### `SPAD Simulation/`
-Single Photon Avalanche Diode (SPAD) detection simulations with non-paralyzable dead time.
-- **Event generation**: Poisson process with exponential inter-arrival times
-- **Dead time modeling**: Non-paralyzable detector recovery model
-- **Visualization**: Publication-ready timeline plots for detected and missed events
-
+### `PAS AWGN Simulation/` - **PAS/PAM Comparison**
+Reference implementations for performance benchmarking.
+- Ideal AWGN channel simulations (uniform and shaped PAM)
 ### `ccdm/`
-Constant Composition Distribution Matching (CCDM) library for probabilistic shaping.
-- Encoding and decoding routines
-- Pre-compiled MEX functions for performance
+CCDM library for distribution matching (pre-compiled MEX binaries included).
 
 ## 🔧 Requirements
 
@@ -41,22 +44,6 @@ Constant Composition Distribution Matching (CCDM) library for probabilistic shap
 - **Signal Processing Toolbox** (for equalization and filtering)
 
 
-## 📊 Key Features
-
-- **Probabilistic Amplitude Shaping**: CCDM-based distribution matching for improved power efficiency
-- **Gray Coding**: Optimized bit-to-symbol mapping for 4-PAM modulation
-- **Volterra Equalization**: Nonlinear equalization for optical channel distortion
-- **LDPC Forward Error Correction**: IEEE 802.11n standard LDPC codes
-- **Photon Detection Modeling**: Realistic SPAD and SiPM response with dead-time effects
-- **Monte Carlo Simulations**: BER vs. Eb/N0 performance evaluation
-
-
-
-## 📝 Notes
-
-- The `ccdm/` folder contains pre-compiled MEX binaries for Windows, Linux, and macOS
-- Example data files are provided in `Asymmetric PAS/example/` for receiver testing
-- All simulations use fixed random seeds for reproducibility
 
 ## 📄 License
 
@@ -76,14 +63,12 @@ DOI: [10.1561/0100000111](https://www.nowpublishers.com/article/Details/CIT-111)
 
 ### Acknowledgments
 
-Parts of this code reference the following project:
+This work builds upon and references the following contributions:
 
 **Mihai Varsandan**, "Probabilistic Constellation Shaping for Optical Fiber Communication Systems"  
 GitHub Repository: [https://github.com/mihaivarsandan/Probabilistic_Constellation_Shaping](https://github.com/mihaivarsandan/Probabilistic_Constellation_Shaping)
 
-Gratefully acknowledge these contributions to the field of probabilistic shaping.
+Gratefully acknowledge these foundational contributions to the field of probabilistic shaping.
 
 ---
-
-
 
